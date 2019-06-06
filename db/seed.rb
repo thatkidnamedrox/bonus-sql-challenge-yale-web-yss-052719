@@ -28,7 +28,7 @@ class Daily_Show
 
   def self.create(attributes)
     daily_show = Daily_Show.new(attributes)
-    
+
   end
 
   def save
