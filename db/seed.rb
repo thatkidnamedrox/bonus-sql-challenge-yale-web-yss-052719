@@ -60,6 +60,5 @@ table.each do |row|
     group: row["Group"],
     raw_guest_list: row["Raw_Guest_List"]
   }
-  daily_show = Daily_Show.new(attributes);
-  daily_show.save;
+  Daily_Show.create(attributes);
 end
