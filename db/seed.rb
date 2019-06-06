@@ -6,8 +6,8 @@ class Daily_Show
   @@all = []
   attr_accessor :year, :googleknowledge_occupation, :show, :group, :raw_guest_list
 
-  def initialize(attributes, id=nil)
-    @id = id
+  def initialize(attributes)
+    @id = nil
     attributes.each {|key, value| self.send("#{key}=", value) }
     @@all << self
   end
@@ -24,6 +24,11 @@ class Daily_Show
       )
       SQL
     DB[:conn].execute(sql)
+  end
+
+  def self.create(attributes)
+    daily_show = Daily_Show.new(attributes)
+    
   end
 
   def save
